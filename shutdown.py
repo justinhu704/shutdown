@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 19 19:56:07 2018
-
-@author: 10091
-"""
-
 from datetime import datetime,time,date
 import os
 
