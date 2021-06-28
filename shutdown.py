@@ -1,22 +1,20 @@
-from datetime import datetime,time,date
-import os
+import os 
+import time
 
+import tkinter as tk
+def a():
+    os.system('shutdown /s /t {}'.format(entry.get())) 
+window = tk.Tk()
+window.title('笑死')
+window.geometry("300x100+250+150")
 
-tmNow = datetime.now()
-d = date.today()
-t = time(17,30,00)
-shtdownTime = datetime.combine(d,t)
-def ShutDown():
-     while True:
-         tmNow = datetime.now()
-         timedDelta = (shtdownTime - tmNow).total_seconds()
-         if timedDelta < 60:
-             print('還有59s關機，趕快儲存一下！')
-             os.system('shutdown -s -f -t 30')           
-             #break
-             time.sleep(20)
-         else:
-             continue
-             
-if __name__ == '__main__':
-     ShutDown()
+label = tk.Label(window, text = 'Please choose the number from 1 to 60')  # 顯示文字
+label.pack()
+
+entry = tk.Entry(window, width = 20)
+entry.pack()
+
+button = tk.Button(window, text = "OK", command = a)
+button.pack()
+
+window.mainloop()
